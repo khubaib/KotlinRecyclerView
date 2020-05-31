@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sectionDetail"
+            type="com.example.android.kotlinrecyclerview.entity.SectionDetails" />
+        <variable
+            name="viewmodel"
+            type="com.example.android.kotlinrecyclerview.fragments.detail.DetailFragmentViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/sectionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:fontFamily="@font/bigshot_one"
+            android:gravity="center"
+            android:text="@{`Title: `  +sectionDetail.title}"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toTopOf="@+id/sectionDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="titile" />
+
+        <TextView
+            android:id="@+id/sectionDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            android:layout_marginTop="32dp"
+            android:gravity="center"
+            android:onClick="@{() -> viewmodel.onClose()}"
+            android:text="@{`Description: `  +sectionDetail.description}"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sectionTitle"
+            tools:text="description" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

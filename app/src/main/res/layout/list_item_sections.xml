@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="sections"
+            type="com.example.android.kotlinrecyclerview.entity.ViaplaySection" />
+
+        <variable
+            name="clickListener"
+            type="com.example.android.kotlinrecyclerview.fragments.main.SectionCLickListener" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(sections)}"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:background="@color/colorPrimaryLight"
+            android:textSize="24sp"
+            android:fontFamily="@font/bigshot_one"
+            tools:text="sections text"
+            android:text="@{sections.title}"
+            android:textColor="#000000"/>
+
+
+
+    </RelativeLayout>
+
+</layout>

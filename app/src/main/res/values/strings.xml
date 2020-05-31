@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VPSections</string>
+    <string name="network_error">Error retrieving sections from network.Are you sure device is connected to network?</string>
+</resources>
